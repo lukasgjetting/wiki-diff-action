@@ -2,6 +2,11 @@ name: Wiki Diff
 description: Get the diff of a Wiki (gollum) change
 author: Lukas Gjetting
 
+inputs:
+  repoToken:
+    description: Should be set to ${{ secrets.GITHUB_TOKEN }}
+    required: true
+
 outputs:
   diff:
     description: The raw diff text

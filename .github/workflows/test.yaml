@@ -9,3 +9,5 @@ jobs:
     steps:
       - name: Test
         uses: lukasgjetting/wiki-diff-action@master
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
