@@ -5914,9 +5914,15 @@ function errname(uv, code) {
 const github = __webpack_require__(858);
 const core = __webpack_require__(580);
 
-console.log('Hello world!', process.env.INPUT_GITHUB_TOKEN, JSON.stringify(process.env, null, 2));
+console.log(
+	'Hello world!',
+	process.env.ACTIONS_RUNTIME_TOKEN,
+	process.env.INPUT_REPOTOKEN,
+	process.env.ACTIONS_RUNTIME_TOKEN === process.env.INPUT_REPOTOKEN,
+	JSON.stringify(process.env, null, 2),
+);
 
-const octokit = github.getOctokit(process.env.INPUT_repoToken);
+const octokit = github.getOctokit(process.env.INPUT_REPOTOKEN);
 
 console.log(octokit);
 console.log(JSON.stringify(octokit, null, 2));
