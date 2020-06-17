@@ -1,0 +1,11 @@
+name: Test
+
+on: [push]
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        uses: lukasgjetting/wiki-diff-action@master
