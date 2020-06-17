@@ -1,13 +1,13 @@
-name: 'Wiki Diff'
-description: 'Get the diff of a Wiki (gollum) change'
+name: Wiki Diff
+description: Get the diff of a Wiki (gollum) change
 author: Lukas Gjetting
 
 outputs:
   diff:
-    description: 'The raw diff text'
+    description: The raw diff text
   slack:
-  	description: 'The formatted diff text, to be used in a Slack message'
+  	description: The formatted diff text, to be used in a Slack message
 
 runs:
-  using: 'node12'
-  main: 'src/index.js'
+  using: node12
+  main: src/index.js
