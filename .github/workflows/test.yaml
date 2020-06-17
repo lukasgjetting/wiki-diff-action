@@ -7,6 +7,11 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout wiki repo
+        uses: actions/checkout@v2
+        with:
+          repository: lukasgjetting/wiki-diff-action.wiki
+          path: wiki
       - name: Test
         uses: lukasgjetting/wiki-diff-action@master
         with:
