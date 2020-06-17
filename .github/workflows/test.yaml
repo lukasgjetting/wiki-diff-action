@@ -7,6 +7,11 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - run: |
+        git clone https://github.com/lukasgjetting/wiki-diff-action.wiki.git wiki
+        cd wiki
+        ls
+        git diff ${{ github.sha }} ${{ github.sha }}^1
       - name: Checkout wiki repo
         uses: actions/checkout@v2
         with:
