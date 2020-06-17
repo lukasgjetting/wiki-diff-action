@@ -11,7 +11,7 @@ jobs:
           git clone https://github.com/lukasgjetting/wiki-diff-action.wiki.git wiki
           cd wiki
           ls
-          echo github.pages
+          echo ${{ github.pages }}
           git show ${{ github.pages[0].sha }}
       - name: Checkout wiki repo
         uses: actions/checkout@v2
