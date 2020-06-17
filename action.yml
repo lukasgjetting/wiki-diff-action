@@ -4,7 +4,7 @@ author: Lukas Gjetting
 
 inputs:
   repoToken:
-    description: Should be set to ${{ secrets.GITHUB_TOKEN }}
+    description: Should be set to `secrets.GITHUB_TOKEN`
     required: true
 
 outputs:
