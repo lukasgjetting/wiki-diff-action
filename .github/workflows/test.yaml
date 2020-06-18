@@ -7,18 +7,10 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          git clone https://github.com/lukasgjetting/wiki-diff-action.wiki.git wiki
-          cd wiki
-          ls
-          echo ${{ github.pages }}
-          git show ${{ github.pages[0].sha }}
-      - name: Checkout wiki repo
-        uses: actions/checkout@v2
-        with:
-          repository: lukasgjetting/wiki-diff-action.wiki
-          path: wiki
-      - name: Test
-        uses: lukasgjetting/wiki-diff-action@master
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
+      - id: first
+        run: echo "::set-output name=test::hello"
+      - run: echo "${{ steps.first.outputs.test }}""
+      - id: git
+        run: |
+          git log --format=%B -n 1 ${{ github.pages[0].sha }} | (echo '::set-output name=msg::' && cat) | tr -d '\n'
+      - run: echo "${{ steps.git.outputs.msg }}""
