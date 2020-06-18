@@ -9,7 +9,7 @@ jobs:
     steps:
       - id: first
         run: echo "::set-output name=test::hello"
-      - run: echo "${{ steps.first.outputs.test }}""
+      - run: echo "${{ steps.first.outputs.test }}"
       - id: git
         run: |
           git log --format=%B -n 1 ${{ github.pages[0].sha }} | (echo '::set-output name=msg::' && cat) | tr -d '\n'
